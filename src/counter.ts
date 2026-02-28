@@ -30,3 +30,70 @@ const sum3: (a: number, b: number) => number = (a, b) => {
 };
 
 sum3(1, 2);
+
+//Fundamentos importantes TS
+
+function sum4(a: any, b: any) {
+  return a - b;
+}
+
+console.log(sum4(2, "1"));
+
+//Union type
+let v: number | string = "1";
+
+v.toLocaleLowerCase();
+
+//type guard (ternário ou ou ifs)
+function fn(a: number | string | boolean) {
+  //return typeof a === "number" ? a.toFixed() : a.length;
+
+  // if (typeof a === "number") {
+  //   a.toFixed();
+  // } else {
+  //   a.toLowerCase();
+  // }
+
+  if (typeof a === "number") {
+    return a.toFixed();
+  }
+
+  if (typeof a === "string") {
+    return a.toLowerCase();
+  }
+
+  return a.valueOf();
+}
+
+//Tipagem de array
+const arr1 = [1, 2, 3, "camila"]; //não recomendado
+const arr2: number[] = [1, 2, 3, "camila"];
+const arr3: Array<number | string> = [1, 2, 3, "camila"]; //generic, usar esse caso somente quando tiver dois tipos
+
+//Tipagem de objetos
+
+//Tipagem por inferência
+const person = {
+  name: "Camila",
+  age: 38,
+  hobbies: ["Bike", "Trekking"],
+};
+
+type Person = typeof person;
+
+const car = {
+  brand: "VW",
+  model: "gol",
+  engine: "2.0",
+};
+
+type Car = typeof car;
+
+// control + backspace já aparece as propriedades do tipo
+const arr4: Person[] = [
+  {
+    age: 6,
+    name: "Marlene",
+    hobbies: ["latir", "dormir"],
+  },
+];
