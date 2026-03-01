@@ -134,3 +134,19 @@ interface Car2 {
 interface Car2 {
   speed: number;
 }
+
+//garantir imutabilidade
+type PersonName = {
+  name: string;
+};
+
+type PersonSurname = {
+  surname: string;
+};
+
+type PersonWithSurname = PersonName & PersonSurname;
+
+const cliente: PersonWithSurname = {
+  name: "Maria",
+  surname: "Aparecida",
+};
