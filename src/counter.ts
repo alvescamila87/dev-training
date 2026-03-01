@@ -76,24 +76,61 @@ const arr3: Array<number | string> = [1, 2, 3, "camila"]; //generic, usar esse c
 const person = {
   name: "Camila",
   age: 38,
-  hobbies: ["Bike", "Trekking"],
+  hobbies: ["Trekking", "Bike"],
 };
 
 type Person = typeof person;
 
-const car = {
-  brand: "VW",
-  model: "gol",
-  engine: "2.0",
-};
-
-type Car = typeof car;
-
-// control + backspace já aparece as propriedades do tipo
 const arr4: Person[] = [
   {
-    age: 6,
-    name: "Marlene",
-    hobbies: ["latir", "dormir"],
+    age: 36,
+    name: "João",
+    hobbies: ["Sleeping", "Cooking"],
   },
 ];
+
+const car = {
+  brand: "BMW",
+  model: "X6",
+};
+
+//extração de tipo através de objeto criado, no momento do array permite autocomplete
+type Car = typeof car;
+
+const arr5: Car[] = [
+  {
+    brand: "VW",
+    model: "Golf",
+  },
+];
+
+type Product = { product: string; name: string; items: number };
+
+const arr6: Product = [
+  {
+    product: "Livro",
+    name: "O senhor dos anéis",
+    items: 100,
+  },
+];
+
+// interface: é mutável, permite extender
+type Person2 = Person & {
+  surname: "José";
+};
+
+const person2: Person2 = {
+  name: "Maria",
+  age: 30,
+  surname: "José",
+  hobbies: ["Orar", "Rogar"],
+};
+
+interface Car2 {
+  motor: string;
+  brand: string;
+}
+
+interface Car2 {
+  speed: number;
+}
