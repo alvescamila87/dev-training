@@ -106,13 +106,15 @@ const arr5: Car[] = [
 
 type Product = { product: string; name: string; items: number };
 
-const arr6: Product = [
+const arr6: Product[] = [
   {
     product: "Livro",
     name: "O senhor dos anéis",
     items: 100,
   },
 ];
+
+console.log(arr6);
 
 // interface: é mutável, permite extender
 type Person2 = Person & {
@@ -141,12 +143,33 @@ type PersonName = {
 };
 
 type PersonSurname = {
-  surname: string;
+  surname?: string;
 };
 
 type PersonWithSurname = PersonName & PersonSurname;
 
 const cliente: PersonWithSurname = {
   name: "Maria",
-  surname: "Aparecida",
+  //surname: "Aparecida",
 };
+
+//type guard in objects
+type Pet = {
+  animal: string;
+  age: number;
+  brand: string;
+};
+
+function fn2(obj: Pet) {
+  if (obj === null) return null;
+
+  return obj.brand;
+}
+
+const pet: Pet = {
+  animal: "Marlene",
+  age: 6,
+  brand: "Pinscher",
+};
+
+fn2(pet);
