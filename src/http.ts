@@ -8,15 +8,18 @@ const request = (url: Url, options?: RequestInit) => {
 
 type Methods = "POST" | "DELETE";
 
-//currying
-const createRequest = (method: Methods) => (url: URL, data) =>
-  request(url, {
-    method,
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+//currying function (data)
+//generics
+const createRequest =
+  (method: Methods) =>
+  <T>(url: URL, data: T) =>
+    request(url, {
+      method,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
 export const get = request;
 export const post = createRequest("POST");
