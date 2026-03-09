@@ -1,5 +1,8 @@
 //componente: função que retorna jsx
 
+import Button2 from "./Button";
+import { Field } from "./Field";
+
 // mais legível
 type ButtonProps = {
   //backgroundColor: string;
@@ -33,8 +36,37 @@ function App() {
         gap: "16px",
       }}
     >
+      <Field
+        name="Nome completo"
+        type="text"
+        placeholder="Digite o nome"
+        required
+      />
+
+      <Field
+        name="Cellphone"
+        type="number"
+        placeholder="00-00000-0000"
+        required={false}
+      />
       <Button pillShape={true} fontSize={30} backgroundColor="#0000ff" />
       <Button pillShape={true} fontSize={30} backgroundColor="#ffff00" />
+      <Button2
+        type="reset"
+        pillShape={false}
+        backgroundColor="lightgreen"
+        fontSize={20}
+      >
+        Clear
+      </Button2>
+      <Button2
+        type={"submit"}
+        fontSize={50}
+        backgroundColor="lightgrey"
+        pillShape={true}
+      >
+        Salvar
+      </Button2>
     </div>
   );
 }
