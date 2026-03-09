@@ -1,4 +1,4 @@
-function checkInput(a: number | string) {
+function checkInput(a: number | string | boolean) {
   if (typeof a === "string") {
     return a.toLocaleLowerCase();
   }
@@ -8,7 +8,7 @@ function checkInput(a: number | string) {
   }
 
   if (typeof a === "boolean") {
-    return a;
+    return a.valueOf();
   }
 }
 
