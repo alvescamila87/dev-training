@@ -1,6 +1,7 @@
 //componente: função que retorna jsx
 
 import Button2 from "./Button";
+import Button3 from "./Button3";
 import { Field } from "./Field";
 
 // mais legível
@@ -67,6 +68,8 @@ function App() {
       >
         Salvar
       </Button2>
+
+      <Button3 style={{ fontWeight: 65, backgroundColor: "pink" }} />
     </div>
   );
 }
