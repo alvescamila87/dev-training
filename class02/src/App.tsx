@@ -2,6 +2,7 @@
 
 import Button2 from "./Button";
 import Button3 from "./Button3";
+import Button4 from "./Button4";
 import { Field } from "./Field";
 
 // mais legível
@@ -70,6 +71,15 @@ function App() {
       </Button2>
 
       <Button3 style={{ fontWeight: 65, backgroundColor: "pink" }} />
+
+      <Button4
+        borderRadius={{
+          topLeft: 75,
+          topRight: 90,
+          bottomRight: 30,
+          bottomLeft: 20,
+        }}
+      />
     </div>
   );
 }
