@@ -39,6 +39,10 @@ function App() {
     console.log("Click button");
   };
 
+  const handleSubmit = () => {
+    console.log("Enviar");
+  };
+
   return (
     <div
       style={{
@@ -72,6 +76,7 @@ function App() {
         Clear
       </Button2>
       <Button2
+        onClick={handleSubmit}
         type={"submit"}
         fontSize={50}
         backgroundColor="lightgrey"

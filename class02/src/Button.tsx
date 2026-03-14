@@ -6,6 +6,7 @@ type ButtonProps = {
   backgroundColor: string;
   pillShape: boolean;
   children: React.ReactNode;
+  onClick: () => void;
 };
 
 const Button2 = ({
@@ -14,9 +15,11 @@ const Button2 = ({
   pillShape,
   type,
   children,
+  onClick,
 }: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       type={type}
       style={{
         fontSize,
