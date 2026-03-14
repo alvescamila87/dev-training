@@ -3,6 +3,7 @@
 import Button2 from "./Button";
 import Button3 from "./Button3";
 import Button4 from "./Button4";
+import Documento, { type ValidKeys } from "./Documento";
 import { Field } from "./Field";
 
 // mais legível
@@ -29,6 +30,10 @@ function Button({ backgroundColor, fontSize, pillShape }: ButtonProps) {
 }
 
 function App() {
+  const docs: ValidKeys = {
+    "Documento CTE": "cte.pdf",
+    "Documento NFSE": "nfse.pdf",
+  };
   return (
     <div
       style={{
@@ -71,6 +76,8 @@ function App() {
       </Button2>
 
       <Button3 style={{ fontWeight: 65, backgroundColor: "pink" }} />
+
+      <Documento documentos={docs} chave="Documento CTE" />
 
       <Button4
         borderRadius={{
