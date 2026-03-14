@@ -6,10 +6,11 @@ type ButtonProps = {
   //     bottomRight: number;
   //     bottomLeft: number;
   //   };
+  onClickButton: () => void;
 };
 
-const Button4 = ({ borderRadius }: ButtonProps) => {
-  return <button>My button 4</button>;
+const Button4 = ({ borderRadius, onClickButton }: ButtonProps) => {
+  return <button onClick={onClickButton}>My button 4</button>;
 };
 
 export default Button4;

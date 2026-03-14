@@ -34,6 +34,11 @@ function App() {
     "Documento CTE": "cte.pdf",
     "Documento NFSE": "nfse.pdf",
   };
+
+  const onClickButton = () => {
+    console.log("Click button");
+  };
+
   return (
     <div
       style={{
@@ -80,6 +85,7 @@ function App() {
       <Documento documentos={docs} chave="Documento CTE" />
 
       <Button4
+        onClickButton={onClickButton}
         borderRadius={{
           topLeft: 75,
           topRight: 90,
