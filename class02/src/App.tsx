@@ -7,6 +7,7 @@ import Button4 from "./Button4";
 import Documento, { type ValidKeys } from "./Documento";
 import { Field } from "./Field";
 import Button5 from "./Button5";
+import Button6 from "./Button6";
 
 // mais legível
 type ButtonProps = {
@@ -101,9 +102,9 @@ function App() {
 
       <Documento documentos={docs} chave="Documento CTE" />
 
-      <Button5 autoFocus={true} disabled={true} onClick={console.log}>
-        New button
-      </Button5>
+      <Button5 autoFocus={true} disabled={true} onClickButton={console.log} />
+
+      <Button6 />
 
       <h1>
         {count}
