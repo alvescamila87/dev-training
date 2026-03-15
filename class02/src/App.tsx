@@ -1,5 +1,6 @@
 //componente: função que retorna jsx
 
+import { useState } from "react";
 import Button2 from "./Button";
 import Button3 from "./Button3";
 import Button4 from "./Button4";
@@ -30,13 +31,20 @@ function Button({ backgroundColor, fontSize, pillShape }: ButtonProps) {
 }
 
 function App() {
+  const [count, setCount] = useState(0);
+
   const docs: ValidKeys = {
     "Documento CTE": "cte.pdf",
     "Documento NFSE": "nfse.pdf",
   };
 
-  const onClickButton = () => {
-    console.log("Click button");
+  const handleClear = () => {
+    console.log("Clean fields");
+  };
+
+  const handleIncrementCount = () => {
+    setCount((prev) => prev + 1);
+    console.log("Plus 1");
   };
 
   const handleSubmit = () => {
@@ -68,6 +76,7 @@ function App() {
       <Button pillShape={true} fontSize={30} backgroundColor="#0000ff" />
       <Button pillShape={true} fontSize={30} backgroundColor="#ffff00" />
       <Button2
+        onClick={handleClear}
         type="reset"
         pillShape={false}
         backgroundColor="lightgreen"
@@ -89,15 +98,19 @@ function App() {
 
       <Documento documentos={docs} chave="Documento CTE" />
 
-      <Button4
-        onClickButton={onClickButton}
-        borderRadius={{
-          topLeft: 75,
-          topRight: 90,
-          bottomRight: 30,
-          bottomLeft: 20,
-        }}
-      />
+      <h1>
+        {count}
+        <br></br>
+        <Button4
+          onClickButton={handleIncrementCount}
+          borderRadius={{
+            topLeft: 75,
+            topRight: 90,
+            bottomRight: 30,
+            bottomLeft: 20,
+          }}
+        />
+      </h1>
     </div>
   );
 }
