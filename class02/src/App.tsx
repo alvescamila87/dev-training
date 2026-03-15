@@ -1,11 +1,12 @@
 //componente: função que retorna jsx
 
 import { useState } from "react";
-import Button2 from "./Button";
+import Button2 from "./Button2";
 import Button3 from "./Button3";
 import Button4 from "./Button4";
 import Documento, { type ValidKeys } from "./Documento";
 import { Field } from "./Field";
+import Button5 from "./Button5";
 
 // mais legível
 type ButtonProps = {
@@ -76,6 +77,7 @@ function App() {
       <Button pillShape={true} fontSize={30} backgroundColor="#0000ff" />
       <Button pillShape={true} fontSize={30} backgroundColor="#ffff00" />
       <Button2
+        disabled={false}
         onClick={handleClear}
         type="reset"
         pillShape={false}
@@ -85,6 +87,7 @@ function App() {
         Clear
       </Button2>
       <Button2
+        disabled={false}
         onClick={handleSubmit}
         type={"submit"}
         fontSize={50}
@@ -97,6 +100,10 @@ function App() {
       <Button3 style={{ fontWeight: 65, backgroundColor: "pink" }} />
 
       <Documento documentos={docs} chave="Documento CTE" />
+
+      <Button5 autoFocus={true} disabled={true} onClick={console.log}>
+        New button
+      </Button5>
 
       <h1>
         {count}

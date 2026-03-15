@@ -7,6 +7,7 @@ type ButtonProps = {
   pillShape: boolean;
   children: React.ReactNode;
   onClick: () => void;
+  disabled: boolean;
 };
 
 const Button2 = ({
@@ -16,9 +17,11 @@ const Button2 = ({
   type,
   children,
   onClick,
+  disabled,
 }: ButtonProps) => {
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       type={type}
       style={{
