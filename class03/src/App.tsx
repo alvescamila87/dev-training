@@ -3,12 +3,20 @@ import { Toggle } from "./Toogle";
 
 function App() {
   const [shouldShow, setShouldShow] = useState(true);
+  const [count, setCount] = useState(0);
 
   const handleClickToggle = () => setShouldShow((s) => !s);
+
+  const handleCount = () => {
+    setCount(count + 1);
+  };
 
   return (
     <div className="app">
       <Toggle shouldShow={shouldShow} onClickToggle={handleClickToggle} />
+      <br></br>
+      <h1>Contagem: {count}</h1>
+      <button onClick={handleCount}>+</button>
     </div>
   );
 }
