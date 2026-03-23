@@ -7,7 +7,7 @@ function App() {
 
   const handleClickToggle = () => setShouldShow((s) => !s);
 
-  const handleCount = () => {
+  const handleIncrement = () => {
     setCount(count + 1);
   };
 
@@ -16,7 +16,7 @@ function App() {
       <Toggle shouldShow={shouldShow} onClickToggle={handleClickToggle} />
       <br></br>
       <h1>Contagem: {count}</h1>
-      <button onClick={handleCount}>+</button>
+      <button onClick={handleIncrement}>+</button>
     </div>
   );
 }
